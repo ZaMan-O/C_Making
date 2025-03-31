@@ -6,14 +6,14 @@
 #include <Windows.h>
 #include <stdlib.h>
 #include <fcntl.h>
-#include <io.h>
+//#include <io.h>
 #include <wchar.h>
 #include <time.h>
 #include <string.h>
-#include <conio.h>
+//#include <conio.h>
 #include <stdbool.h>
 
-void SetColor(int num);
+void SetColor(int text_color,int bg_color);
 void Timer();
 void PrintNumber(int h,int m,int s);
 void PrintSquare();

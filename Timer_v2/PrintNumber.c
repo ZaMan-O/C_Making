@@ -31,7 +31,7 @@ void PrintNumber(int h,int m,int s) {
 		for (int ii = 0;ii < 6;ii++) NumberArray[s_1][i][ii] ? wprintf(L"██") : wprintf(L"  ");
 
 		// 가로줄 출력 완료했으니 다음줄로 넘어가기
-		wprintf(L"\n                      ");
+		wprintf(L"\n                        ");
 	}
 	_setmode(_fileno(stdout), _O_TEXT);
 }

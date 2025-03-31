@@ -8,12 +8,31 @@ void Timer() {
 	time_t timer;
 	struct tm* t;
 	
-	timer = time(NULL);
-	t = localtime(&timer);
+	time_t prev_Time = time(NULL);
 
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n"); // °ø¹é Ãâ·Â
-	Sleep(800);
-	system("cls");
-	printf("                      ");
-	PrintNumber(t->tm_hour,t->tm_min,t->tm_sec);
+	int text_color = yellow; // ±Û¾¾ »ö±ò
+	int bg_color = gold; // ¹è°æ »ö±ò
+	while (1) {
+		Sleep(100);
+		if (prev_Time != time(NULL)) {
+			prev_Time = time(NULL);
+
+			timer = time(NULL);
+			t = localtime(&timer);
+
+			system("cls");
+
+			SetColor(text_color, bg_color);
+			printf("\n\n\n\n\n\n\n\n");
+			// ³âµµ/¿ù/ÀÏ Ãâ·Â
+			printf("                        ");
+			SetColor(light_aqua, blue);
+			printf(" %d / %02d / %02d ", t->tm_year + 1900, t->tm_mon + 1, t->tm_mday);
+			SetColor(0, 0);
+			printf("\n\n");
+			SetColor(text_color,bg_color); // Ã¹¹øÂ° ±Û¾¾»ö±ò , µÎ¹øÂ° ¹è°æ»ö±ò
+			printf("                        ");
+			PrintNumber(t->tm_hour, t->tm_min, t->tm_sec);
+		}
+	}
 }
